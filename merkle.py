@@ -2,7 +2,7 @@ import hashlib,json
 from collections import OrderedDict
 
 # 1. Declare the class trees
-class Jae_MerkTree:
+class RajaTree:
 
 	# 2. Initiate the class object
 	def __init__(self,listoftransaction=None):
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
 	# h) Second example
 #	print "Second Example - Odd number of transaction Merkel Tree"
-	Jae_Tree = Jae_MerkTree()
+	Jae_Tree = RajaTree()
 	transaction = ['a','b','c','d','e']
 	Jae_Tree.listoftransaction = transaction
 	Jae_Tree.create_tree()
