@@ -13,9 +13,9 @@ class Hash_node(object):
 class RajaTree(object):
     def __init__(self):
         self.root = None
-        self.nodes = {}
+        self.dict = {}
         self.list_represent = []
-        self.transactions = ['a','b','c','d']
+        self.transactions = ['a','b','c']
 #        self.transactions = ['a','b','c','d','e','f','g','h','i']
     
     def _hash_transactions(self):
@@ -31,19 +31,27 @@ class RajaTree(object):
         ''' nodes: [] of hash_nodes'''
         temp_list=[]
         new_node_list = []
+        
         for index in range(0, len(node_list), 2):
+            #check if the node is the last node, then concat the nodes' hashes
             if index + 1 <= len(node_list) - 1:
                 hash_concat = node_list[index].hash_val + node_list[index+1].hash_val
             else:
                 hash_concat = node_list[index].hash_val
+                
             new_hash = calculate_hash(hash_concat)
             new_node = Hash_node(new_hash)
+            
             new_node_list.append(new_node)
             temp_list.append(new_node)
-            self.nodes[new_hash] = new_node
-            node_list[index].parent_node = self.nodes[new_hash]
+            
+            #add to the tree's dictionary for hash pointing
+            self.dict[new_hash] = new_node
+            
+            #create hash pointer
+            node_list[index].parent_node = self.dict[new_hash]
             if index + 1 <= len(node_list) - 1:
-                node_list[index+1].parent_node = self.nodes[new_hash]
+                node_list[index+1].parent_node = self.dict[new_hash]
         self.list_represent = temp_list + self.list_represent
         return new_node_list
     
@@ -92,6 +100,6 @@ if __name__ == '__main__':
 #    for x in range(1,len(c)):
 #        print("value at", x)
 #        print(c[x].hash_val)
-    print(a.verify_member(7,'d',b))
+#    print(a.verify_member(7,'d',b))
 #    print(calculate_hash(calculate_hash(calculate_hash('a')+calculate_hash('b'))+calculate_hash(calculate_hash('b'))))
     
