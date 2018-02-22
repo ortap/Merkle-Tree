@@ -56,7 +56,10 @@ Testing Membership and nonmembership of a string
 ```
 ### Prerequisites
 
-None
+hashlib for hashing with SHA256 function
+```
+pip install hashlib
+```
 
 ## Authors
 
