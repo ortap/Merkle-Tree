@@ -20,6 +20,7 @@ Testing traversal
     merkle_tree.traverse('h')
 ```
 Testing hash pointer
+```
     transactions = ['a','b','c','d','e','f','g']
     merkle_tree.list_represent[-2].data = 'k'
     merkle_tree.traverse('g')
@@ -37,7 +38,7 @@ Testing Membership and nonmembership of a string
     merkle_tree.verify_membership('0' , peer)
     merkle_tree.verify_nonmember('b', peer)
     merkle_tree.verify_nonmember('0', peer)
-'''
+```
 ### Prerequisites
 
 None
