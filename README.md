@@ -43,10 +43,6 @@ Testing Membership and nonmembership of a string
 
 None
 
-## Running the tests
-
-Download ps5_test.py to test run
-
 ## Authors
 
 * **Min Joon So** - *Initial work* - [mjso7660](https://github.com/mjso7660)
